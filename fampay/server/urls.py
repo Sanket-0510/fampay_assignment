@@ -5,7 +5,7 @@ from . import views
 
 
 urlpatterns = [
-	path('getVideos', views.get_most_recent_video.as_view()),
+	path('getVideos', views.PaginatedVideoListView.as_view(), name='paginated_videos'),
 ]
 
 
