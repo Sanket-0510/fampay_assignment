@@ -9,4 +9,3 @@ urlpatterns = [
 ]
 
 
-services.THREAD.start()
