@@ -32,7 +32,6 @@ class OptimizedSearchVideo(APIView):
         return Response({'status': 'success', 'data': serializer.data})
     
 
-
 class APIKeyView(APIView):
     """API to add and view API keys."""
 

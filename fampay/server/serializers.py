@@ -4,8 +4,9 @@ from .models import APIkey, Video
 class APIKeySerializer(serializers.ModelSerializer):
     class Meta:
         model = APIkey
-        fields = ['id', 'key', 'is_active', 'is_limit_over', 'created_at', 'updated_at']
+        fields = ['id', 'key', 'is_key_exhausted', 'created_at', 'updated_at'] 
         read_only_fields = ['created_at', 'updated_at']
+
 
 
 class VideoSerializer(serializers.ModelSerializer):

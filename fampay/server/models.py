@@ -20,11 +20,14 @@ class Video(models.Model):
 
 
 class APIkey(models.Model):
-    key= models.TextField
-    is_key_exhausted = models.BooleanField(default=False)
+    key = models.TextField()
+    is_key_exhausted = models.BooleanField(default=False)  
+    created_at = models.DateTimeField(auto_now_add=True)  
+    updated_at = models.DateTimeField(auto_now=True)     
 
     class Meta:
         verbose_name = 'APIkey'
         verbose_name_plural = 'APIkeys'
+
     def __str__(self):
-        return self.title
+        return self.key  
