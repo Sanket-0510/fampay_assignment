@@ -1,6 +1,4 @@
 from django.urls import path
-
-from . import services
 from . import views
 
 
