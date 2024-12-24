@@ -1,14 +1,11 @@
 
 from django.http import JsonResponse
-from .models import Video
+from .models import Video,APIkey
 
 def get_most_recent_video(request):
     """Fetch the most recently added video from the database."""
     try:
-        # Get the most recent video based on `created_at` timestamp
         most_recent_video = Video.objects.latest('created_at')
-        
-        # Prepare the video data as a dictionary
         video_data = {
             'video_id': most_recent_video.video_id,
             'video_title': most_recent_video.video_title,
@@ -21,3 +18,5 @@ def get_most_recent_video(request):
         return JsonResponse({'status': 'success', 'video': video_data})
     except Video.DoesNotExist:
         return JsonResponse({'status': 'error', 'message': 'No videos found'}, status=404)
+
+
