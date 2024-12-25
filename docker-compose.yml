@@ -1,0 +1,44 @@
+version: '3'
+
+services:
+  # Frontend React app
+  frontend:
+    build:
+      context: ./frontend/fampay-frontend
+    ports:
+      - "3000:3000"
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+  # Backend Django app
+  backend:
+    build:
+      context: ./fampay
+    ports:
+      - "8000:8000"
+    depends_on:
+      - db
+    networks:
+      - app-network
+
+  # PostgreSQL database
+  db:
+    image: postgres:13
+    environment:
+      - POSTGRES_USER=fam_user
+      - POSTGRES_PASSWORD=fampay
+      - POSTGRES_DB=fampay
+    ports:
+      - "5432:5432"
+    networks:
+      - app-network
+
+# Networks and volumes for inter-service communication and data persistence
+networks:
+  app-network:
+    driver: bridge
+
+volumes:
+  pgdata:

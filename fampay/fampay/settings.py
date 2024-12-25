@@ -81,9 +81,9 @@ DATABASES = {
     'default': {
        'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'fampay',         
-        'USER': 'postgres',        
+        'USER': 'fam_user',        
         'PASSWORD': 'fampay', 
-        'HOST': 'localhost',             
+        'HOST': 'db',             
         'PORT': '5432',    
     }
 }
