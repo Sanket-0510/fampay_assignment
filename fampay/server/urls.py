@@ -1,7 +1,6 @@
 from django.urls import path
 from . import views
-
-
+from . import utils
 urlpatterns = [
 	path('getVideos', views.PaginatedVideoListView.as_view(), name='paginated_videos'),
     path('searchVideos', views.OptimizedSearchVideo.as_view(), name="view_for_searching_videos"),

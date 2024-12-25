@@ -21,7 +21,6 @@ class OptimizedSearchVideo(APIView):
 
     def get(self, request):
         search_query = request.query_params.get('query', '')
-
         if search_query:
             videos = Video.objects.filter(
                 Q(video_title__icontains=search_query) | Q(video_description__icontains=search_query)
