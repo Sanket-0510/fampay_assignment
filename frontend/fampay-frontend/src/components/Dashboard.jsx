@@ -9,12 +9,12 @@ const Dashboard = () => {
   const [searchQuery, setSearchQuery] = useState("");
   const [loading, setLoading] = useState(false);
 
-  // Fetch all videos on initial load
+
   useEffect(() => {
     fetchVideos();
   }, []);
 
-  // Function to fetch videos from the API
+
   const fetchVideos = async (query = "") => {
     setLoading(true);
 
