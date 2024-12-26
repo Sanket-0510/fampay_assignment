@@ -26,7 +26,7 @@ change the directory
 
 <p> make sure that you have docker and docker compose intalled on your system </p> 
 
-<h3>run the docker compose file</h3>
+<h3>run the docker compose file (but before doing this make sure that no native or local pgsql  server is running on your machine at port 5432 else will cause collision with the docker compose service ) </h3>
 
   `docker-compose up`
 
